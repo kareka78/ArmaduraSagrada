@@ -69,6 +69,7 @@ class MainActivity : AppCompatActivity() {
         //Si es pegaso no va a estar "checked" el switch caballero
         //Si es dragon, si va a estarlo.
         bundle.putBoolean("caballero",caballero.isChecked)
+        bundle.putBoolean("tipoMovimiento",modoMovimiento.isChecked)
         i.putExtras(bundle)
         this.startActivity(i)
     }

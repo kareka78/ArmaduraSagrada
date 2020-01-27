@@ -9,7 +9,7 @@ class AndroidLauncher : AndroidApplication() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val config = AndroidApplicationConfiguration()
-        initialize(Mijuego(this.intent.extras!!.getBoolean("caballero")), config)
+        initialize(Mijuego(this.intent.extras!!.getBoolean("caballero")),this.intent.extras!!.getBoolean("tipoMovimiento")), config)
     }
 
 }
