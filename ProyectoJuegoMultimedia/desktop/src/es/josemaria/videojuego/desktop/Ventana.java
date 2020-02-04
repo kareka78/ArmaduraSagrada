@@ -19,7 +19,7 @@ public class Ventana extends JFrame {
         this.setResizable(false);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
-        this.setContentPane(new PantallaPrincipal(this));
+        this.setContentPane(new PantallaMenu(this));
         setVisible(true);
         try {
             setIconImage(ImageIO.read(new File("parteAndroid/app_icon.png")));

@@ -34,14 +34,14 @@ public class PantallaPrincipal extends JPanel {
     private JToggleButton tglbtnModoDeMovimiento;
 
     public PantallaPrincipal(Ventana v){
-        setLayout(null);
-        this.ventana=v;
+            setLayout(null);
+            this.ventana=v;
 
-        JLabel lblDjateDeAventuritas = new JLabel("Tras la Armadura Sagrada", SwingConstants.CENTER);
-        lblDjateDeAventuritas.setFont(new Font("impact", Font.PLAIN, 26));
-        lblDjateDeAventuritas.setForeground(Color.decode("#d54f43"));
-        lblDjateDeAventuritas.setBounds(120, 50, 500, 80);
-        add(lblDjateDeAventuritas);
+        JLabel lblTrasArmaduraSagrada = new JLabel("Tras la Armadura Sagrada", SwingConstants.CENTER);
+        lblTrasArmaduraSagrada.setFont(new Font("impact", Font.PLAIN, 26));
+        lblTrasArmaduraSagrada.setForeground(Color.decode("#d54f43"));
+        lblTrasArmaduraSagrada.setBounds(120, 50, 500, 80);
+        add(lblTrasArmaduraSagrada);
 
         JButton btnJugar = new JButton("Jugar");
         btnJugar.setBounds(220, 425, 300, 55);
