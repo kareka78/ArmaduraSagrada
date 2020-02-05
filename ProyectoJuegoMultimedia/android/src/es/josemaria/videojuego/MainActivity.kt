@@ -45,16 +45,7 @@ class MainActivity : AppCompatActivity() {
             caballero.setText(R.string.pegaso)
         }
 
-        //Si las preferencias establecen que el modo de movimiento es continuo, lo rescatamos para esta app. Y al contrario.
-        if(preferencias.getBoolean("modoMovimiento",false)){
-            modoMovimiento.isChecked=true;
-            modoMovimiento.setText(R.string.continuo)
 
-        }else{
-            modoMovimiento.isChecked=false;
-            modoMovimiento.setText(R.string.discreto)
-
-        }
     }
 
     /**
@@ -69,7 +60,6 @@ class MainActivity : AppCompatActivity() {
         //Si es pegaso no va a estar "checked" el switch caballero
         //Si es dragon, si va a estarlo.
         bundle.putBoolean("caballero",caballero.isChecked)
-        bundle.putBoolean("tipoMovimiento",modoMovimiento.isChecked)
         i.putExtras(bundle)
         this.startActivity(i)
     }
@@ -86,17 +76,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /**
-     * Evento onClick del switch de modo de Movimiento, que cambia el modo de movimiento entre discreto y continuo, para comenzar así el juego.
-     * @param view vista que se cliqueó. El switch en este caso.
-     */
-    fun cambiarModoMovimiento(view: View) {
-        if ((view as Switch).isChecked) {
-            modoMovimiento.setText(R.string.continuo)
-        } else {
-            modoMovimiento.setText(R.string.discreto)
-        }
-    }
+
 
     /**
      * Evento onclick del imageView de la llave inglesa. Lleva al usuario a la pantalla de preferencias.

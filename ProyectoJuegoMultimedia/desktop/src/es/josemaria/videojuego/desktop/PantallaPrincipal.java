@@ -38,7 +38,7 @@ public class PantallaPrincipal extends JPanel {
             this.ventana=v;
 
         JLabel lblTrasArmaduraSagrada = new JLabel("Tras la Armadura Sagrada", SwingConstants.CENTER);
-        lblTrasArmaduraSagrada.setFont(new Font("impact", Font.PLAIN, 26));
+        lblTrasArmaduraSagrada.setFont(new Font("impact", Font.PLAIN, 46));
         lblTrasArmaduraSagrada.setForeground(Color.decode("#d54f43"));
         lblTrasArmaduraSagrada.setBounds(120, 50, 500, 80);
         add(lblTrasArmaduraSagrada);
@@ -64,8 +64,8 @@ public class PantallaPrincipal extends JPanel {
         });
         add(btnJugar);
 
-        JButton botonOpciones = new JButton("Guardar seleccion Caballero/Modo de movimiento");
-        botonOpciones.setBounds(170, 507, 400, 37);
+        JButton botonOpciones = new JButton("Guardar seleccion Caballero");
+        botonOpciones.setBounds(170, 607, 400, 50);
         botonOpciones.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -78,11 +78,6 @@ public class PantallaPrincipal extends JPanel {
                         bw.write("Pegaso");
                     }
                     bw.newLine();
-                    if(tglbtnModoDeMovimiento.isSelected()){
-                        bw.write("continuo");
-                    }else{
-                        bw.write("discreto");
-                    }
                     bw.flush();
                     bw.close();
                     JOptionPane.showMessageDialog(ventana, "Configuracion guardada!","Configuracion guardada!",JOptionPane.INFORMATION_MESSAGE);
@@ -95,7 +90,7 @@ public class PantallaPrincipal extends JPanel {
         add(botonOpciones);
 
         tglbtnCaballero = new JToggleButton("Caballero Pegaso");
-        tglbtnCaballero.setBounds(220, 341, 300, 23);
+        tglbtnCaballero.setBounds(220, 341, 300, 40);
         tglbtnCaballero.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -108,19 +103,7 @@ public class PantallaPrincipal extends JPanel {
         });
         add(tglbtnCaballero);
 
-        tglbtnModoDeMovimiento = new JToggleButton("Modo de movimiento Discreto");
-        tglbtnModoDeMovimiento.setBounds(220, 376, 300, 23);
-        tglbtnModoDeMovimiento.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(tglbtnModoDeMovimiento.isSelected()){
-                    tglbtnModoDeMovimiento.setText("Modo de movimiento Continuo");
-                }else{
-                    tglbtnModoDeMovimiento.setText("Modo de movimiento Discreto");
-                }
-            }
-        });
-        add(tglbtnModoDeMovimiento);
+
 
 
         //Si el fichero de opciones existe, lo leo y marco lo que está escrito en él
@@ -131,9 +114,7 @@ public class PantallaPrincipal extends JPanel {
                 if(br.readLine().equals("dragon")){
                     tglbtnCaballero.doClick();
                 }
-                if(br.readLine().equals("continuo")){
-                    tglbtnModoDeMovimiento.doClick();
-                }
+
 
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
